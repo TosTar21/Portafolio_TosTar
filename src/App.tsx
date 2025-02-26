@@ -1,14 +1,23 @@
-import '../src/styles/index.css'
+import MainLayout from "./components/Layout/MainLayout";
+import { useTheme } from "./hooks/useTheme";
+import Work from "./pages/Work";
+import { Route, BrowserRouter as Router, Routes } from "react-router";
+import "./styles/index.css";
 
-function App() {
-  
+const App = () => {
+  const { isDarkMode } = useTheme();
+
   return (
-    <>
-    <h1 className='text-4xl text-center text-blue-500'>
-      Hello
-    </h1>
-    </>
-  )
-}
+    <div className={`${isDarkMode ? "bg-neutral-800 text-white" : "bg-neutral-100 text-black"} min-h-screen transition-all duration-500`}>
+      <Router>
+        <MainLayout>
+          <Routes>
+            <Route path="/" element={<Work />} />
+          </Routes>
+        </MainLayout>
+      </Router>
+    </div>
+  );
+};
 
-export default App
+export default App;
