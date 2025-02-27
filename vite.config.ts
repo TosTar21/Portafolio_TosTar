@@ -7,4 +7,11 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
+  server: {
+    port: 3000,
+  },
+  base: "./", // O "/nombre-del-repositorio/" si es un subdirectorio
+  build: {
+    outDir: "dist",
+  },
 })
