@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { heroData } from "../../data/hero";
 import { useTheme } from "../../hooks/useTheme";
+import { useLanguage } from "../../hooks/useLanguage";
 
 const Hero = () => {
   const { isDarkMode } = useTheme();
+  const { language } = useLanguage(); // Obtener idioma actual
+  const hero = heroData[language]; // Datos traducidos dinámicamente
 
   return (
     <motion.section
@@ -14,7 +17,6 @@ const Hero = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-
       {/* Contenedor principal - Cambia el orden en modo oscuro */}
       <div
         className={`flex flex-col md:flex-row items-center justify-center max-w-screen-xl w-full px-6 md:px-12 transition-all duration-500 ${
@@ -30,7 +32,7 @@ const Hero = () => {
         >
           <img
             className="w-[400px] md:w-[500px] h-auto"
-            src={isDarkMode ? heroData.profile.imageDark : heroData.profile.image}
+            src={isDarkMode ? "/PersonaDark.png" : "/Persona.png"}
             alt="Profile"
           />
         </motion.div>
@@ -44,8 +46,9 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
         >
-          <h1 className="text-3xl md:text-4xl font-inter font-bold">{heroData.profile.name}</h1>
-          <p className="text-lg font-poppins">{heroData.profile.description}</p>
+          <h1 className="text-3xl md:text-4xl font-inter font-bold">{hero.greeting}</h1>
+          <p className="text-lg font-poppins font-semibold">{hero.role} - {hero.location}</p>
+          <p className="text-lg font-poppins">{hero.description}</p>
         </motion.div>
       </div>
     </motion.section>
