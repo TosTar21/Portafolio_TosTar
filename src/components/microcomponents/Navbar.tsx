@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav
       className={`w-full h-20 flex justify-between items-center px-8 md:px-16 fixed top-0 left-0 z-50 transition-all duration-500 ${
-        isDarkMode ? "text-white" : "text-black"
+        isDarkMode ? "text-white bg-[#262626] shadow-2xl" : "bg-[#F5F5F5] shadow-2xl text-black"
       } `}
     >
       {/* Logo */}
