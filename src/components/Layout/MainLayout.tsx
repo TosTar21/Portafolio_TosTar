@@ -1,3 +1,4 @@
+import Footer from "../microcomponents/Footer";
 import Navbar from "../microcomponents/Navbar";
 import ThemeIcon from "../microcomponents/ThemeIcon";
 
@@ -7,6 +8,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       <Navbar />
       <ThemeIcon />
       <main className="px-6 md:px-12">{children}</main>
+      <Footer/>
     </div>
   );
 };
