@@ -1,4 +1,5 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { SiReact, SiVite, SiTailwindcss } from "react-icons/si";
 import { useTheme } from "../../hooks/useTheme";
 
 interface Project {
@@ -20,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { isDarkMode } = useTheme();
 
   return (
-    <div className="relative w-[350px] h-[450px]">
+    <div className="relative w-[300px] h-[420px]">
       {/* Tarjeta principal con efecto hover */}
       <div
         className={`relative w-full h-full border-2 rounded-lg p-6 flex flex-col shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105
@@ -46,28 +47,46 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <h3 className="relative z-10 text-lg font-bold">{project.title}</h3>
 
         {/* Imagen del proyecto */}
-        <div className="relative z-10 w-full h-40 overflow-hidden rounded-lg mt-2">
+        <div className="relative z-10 w-full h-32 overflow-hidden rounded-lg mt-2">
           <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
         </div>
 
         {/* Descripción */}
         <p className="relative z-10 text-sm mt-3">{project.description}</p>
 
-        {/* Badges de tecnologías */}
+        {/* Badges de tecnologías (ejemplo con 3 iconos) */}
         <div className="relative z-10 flex gap-2 mt-3 flex-wrap">
-          {project.badges.map((tech, index) => (
-            <span
-              key={index}
-              className={`border px-3 py-1 rounded-md text-sm font-semibold shadow-md
-                ${isDarkMode ? "border-white bg-[#262626] text-white" : "border-black bg-white text-black"}
-              `}
-            >
-              {tech}
-            </span>
-          ))}
+          {project.badges.map((tech, index) => {
+            // Ejemplo con 3 iconos
+            let IconComponent;
+            switch (tech) {
+              case "React":
+                IconComponent = SiReact;
+                break;
+              case "Vite":
+                IconComponent = SiVite;
+                break;
+              case "TailwindCSS":
+                IconComponent = SiTailwindcss;
+                break;
+              default:
+                IconComponent = null;
+            }
+            return (
+              <span
+                key={index}
+                className={`border px-3 py-1 rounded-md text-sm font-semibold shadow-md flex items-center gap-1
+                  ${isDarkMode ? "border-white bg-[#262626] text-white" : "border-black bg-white text-black"}
+                `}
+              >
+                {IconComponent && <IconComponent size={16} />}
+                {tech}
+              </span>
+            );
+          })}
         </div>
 
-        {/* Enlaces de GitHub y Sitio web, ubicados al final */}
+        {/* Enlaces de GitHub y Sitio web */}
         <div className="relative z-10 mt-auto flex justify-center gap-4 pt-4">
           {/* Enlace Live Demo */}
           <a
@@ -79,7 +98,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             }`}
           >
             <FaExternalLinkAlt />
-            {/* Línea que se expande debajo (similar al Navbar) */}
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full"></span>
           </a>
 
@@ -93,7 +111,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             }`}
           >
             <FaGithub />
-            {/* Línea que se expande debajo */}
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full"></span>
           </a>
         </div>

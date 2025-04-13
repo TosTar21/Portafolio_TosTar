@@ -27,7 +27,7 @@ const ProjectsCarousel = () => {
       {/* Flecha Izquierda, posicionada fuera del contenedor de la tarjeta */}
       <button
         onClick={prevProject}
-        className="absolute left-[-40px] top-1/2 -translate-y-1/2 z-10 text-2xl text-black p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer transition-colors"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-2xl text-black p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer transition-colors"
       >
         <FaArrowLeft />
       </button>
@@ -48,7 +48,7 @@ const ProjectsCarousel = () => {
       {/* Flecha Derecha, posicionada fuera del contenedor de la tarjeta */}
       <button
         onClick={nextProject}
-        className="absolute right-[-40px] top-1/2 -translate-y-1/2 z-10 text-2xl text-black p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer transition-colors"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-2xl text-black p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer transition-colors"
       >
         <FaArrowRight />
       </button>
