@@ -3,6 +3,7 @@ import { useTheme } from "./hooks/useTheme";
 import Work from "./pages/Work";
 import { Route, BrowserRouter as Router, Routes } from "react-router";
 import "./styles/index.css";
+import About from "./pages/About";
 
 const App = () => {
   const { isDarkMode } = useTheme();
@@ -13,6 +14,7 @@ const App = () => {
         <MainLayout>
           <Routes>
             <Route path="/" element={<Work />} />
+            <Route path="/about" element={<About/>} />
           </Routes>
         </MainLayout>
       </Router>

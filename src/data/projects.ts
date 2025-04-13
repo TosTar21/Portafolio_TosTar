@@ -21,7 +21,7 @@ export const projectData = {
       image: "./SistemaAdminitsrtivoImagen.png", // Reemplaza esta URL por la imagen real o un placeholder
       badges: ["React", "Vite", "TailwindCSS"],
       github: "https://github.com/BrandonJafeth/Nuestra-Senora-Del-Rosario-Frontend",
-      liveDemo: "https://nursing-home-admin.vercel.app/",
+      liveDemo: "https://nuestra-senora-del-rosario-frontend.vercel.app/",
     },
   ],
   es: [

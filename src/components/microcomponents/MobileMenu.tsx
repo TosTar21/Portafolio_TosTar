@@ -1,5 +1,5 @@
-// src/components/Navbar/MobileMenu.jsx
 import React from "react";
+import { motion } from "framer-motion";
 import { navLinks } from "../../data/navLinks";
 import { useTheme } from "../../hooks/useTheme";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -14,10 +14,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
   const { language } = useLanguage();
 
   return (
-    <div
+    <motion.div
       className={`md:hidden ${
         isDarkMode ? "bg-[#262626] text-white" : "bg-[#F5F5F5] text-black"
       } fixed top-0 left-0 w-full h-full z-50 flex flex-col items-center justify-center transition-all duration-300`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
     >
       {/* Logo en la esquina superior izquierda */}
       <div className="absolute top-0 left-5 p-2">
@@ -48,7 +52,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
           </a>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
