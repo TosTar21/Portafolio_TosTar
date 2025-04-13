@@ -18,18 +18,18 @@ const Navbar = () => {
       {/* Barra de navegación fija */}
       <nav
         className={`w-full fixed top-0 left-0 z-40 transition-all duration-500 ${
-          isDarkMode ? "bg-[#262626] text-white shadow-2xl" : "bg-[#F5F5F5] text-black shadow-2xl"
+          isDarkMode ? "bg-[#262626] text-white " : "bg-[#F5F5F5] text-black"
         }`}
         style={{ height: "80px" }}
       >
         <div className="mx-auto px-8 md:px-16 w-full h-full flex justify-between items-center">
           {/* Logo */}
           <div>
-            <img
-              alt="Logo"
-              className="w-16 h-16 object-contain"
-              src={isDarkMode ? "/logo-dark.png" : "/Logo.png"}
-            />
+          <img
+          alt="Logo"
+          src={isDarkMode ? "/logo-dark.png" : "/Logo.png"}
+          className="w-16 h-16 object-contain"
+        />
           </div>
 
           {/* Navegación en escritorio */}
