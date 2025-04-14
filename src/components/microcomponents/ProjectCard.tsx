@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     // Se define el tamaño base para móviles y se aumentan en pantallas grandes (lg)
-    <div className="relative w-[300px] h-[420px] lg:w-[360px] lg:h-[480px]">
+    <div className="relative w-[265px] h-[420px] lg:w-[360px] lg:h-[480px]">
       {/* Tarjeta principal con efecto hover */}
       <div
         className={`relative w-full h-full border-2 rounded-lg p-6 flex flex-col shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105

@@ -25,7 +25,7 @@ const ProjectsCarousel = () => {
   if (!projects.length) return null;
 
   return (
-    <div className="relative w-[400px] h-[450px] flex items-center justify-center overflow-visible">
+    <div className="relative w-[360px] h-[410px] flex items-center justify-center overflow-visible">
       
       {/* Flecha Izquierda */}
       <button
@@ -33,7 +33,7 @@ const ProjectsCarousel = () => {
         onClick={prevProject}
         // Prevenir que el botón se enfoque al presionarlo para evitar scroll
         onMouseDown={(e) => e.preventDefault()}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-2xl text-black p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer transition-colors"
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 text-lg text-black p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer transition-colors"
       >
         <FaArrowLeft />
       </button>
@@ -56,7 +56,7 @@ const ProjectsCarousel = () => {
         type="button"
         onClick={nextProject}
         onMouseDown={(e) => e.preventDefault()}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-2xl text-black p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer transition-colors"
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 text-lg text-black p-2 bg-white rounded-full shadow-md hover:bg-gray-100 cursor-pointer transition-colors"
       >
         <FaArrowRight />
       </button>
