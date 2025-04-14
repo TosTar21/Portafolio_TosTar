@@ -19,7 +19,7 @@ const Hero = () => {
     >
       {/* Contenedor principal - Cambia el orden en modo oscuro */}
       <div
-        className={`flex flex-col md:flex-row items-center justify-center max-w-screen-xl w-full px-6 md:px-12 transition-all duration-500 ${
+        className={`flex flex-col md:flex-row items-center justify-center max-w-screen-xl pt-28 w-full px-6 md:px-12 transition-all duration-500 ${
           isDarkMode ? "md:flex-row-reverse" : "md:flex-row"
         }`}
       >
