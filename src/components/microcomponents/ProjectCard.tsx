@@ -21,7 +21,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { isDarkMode } = useTheme();
 
   return (
-    <div className="relative w-[300px] h-[420px]">
+    // Se define el tamaño base para móviles y se aumentan en pantallas grandes (lg)
+    <div className="relative w-[300px] h-[420px] lg:w-[360px] lg:h-[480px]">
       {/* Tarjeta principal con efecto hover */}
       <div
         className={`relative w-full h-full border-2 rounded-lg p-6 flex flex-col shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105
@@ -47,17 +48,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <h3 className="relative z-10 text-lg font-bold">{project.title}</h3>
 
         {/* Imagen del proyecto */}
-        <div className="relative z-10 w-full h-32 overflow-hidden rounded-lg mt-2">
+        <div className="relative z-10 w-full h-44 overflow-hidden rounded-lg mt-2">
           <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
         </div>
 
         {/* Descripción */}
-        <p className="relative z-10 text-sm mt-3">{project.description}</p>
+        <p className="relative z-10 text-sm mt-2">{project.description}</p>
 
-        {/* Badges de tecnologías (ejemplo con 3 iconos) */}
-        <div className="relative z-10 flex gap-2 mt-3 flex-wrap">
+        {/* Badges de tecnologías */}
+        <div className="relative z-10 flex gap-2 mt-2 flex-wrap">
           {project.badges.map((tech, index) => {
-            // Ejemplo con 3 iconos
             let IconComponent;
             switch (tech) {
               case "React":
@@ -87,13 +87,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
 
         {/* Enlaces de GitHub y Sitio web */}
-        <div className="relative z-10 mt-auto flex justify-center gap-4 pt-4">
+        <div className="relative z-10 mt-auto flex justify-center gap-4 pt-2">
           {/* Enlace Live Demo */}
           <a
             href={project.liveDemo}
             target="_blank"
             rel="noopener noreferrer"
-            className={`relative group text-2xl transition-all duration-300 ${
+            className={`relative group text-3xl transition-all duration-300 ${
               isDarkMode ? "text-white hover:text-gray-300" : "text-black hover:text-gray-700"
             }`}
           >
@@ -106,7 +106,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className={`relative group text-2xl transition-all duration-300 ${
+            className={`relative group text-3xl transition-all duration-300 ${
               isDarkMode ? "text-white hover:text-gray-300" : "text-black hover:text-gray-700"
             }`}
           >
