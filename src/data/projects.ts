@@ -22,6 +22,16 @@ export const projectData = {
       badges: ["React", "Vite", "TailwindCSS"],
       github: "https://github.com/BrandonJafeth/Nuestra-Senora-Del-Rosario-Frontend",
       liveDemo: "https://nuestra-senora-del-rosario-frontend.vercel.app/",
+    },{
+      id: 3,
+      number: "03",
+      title: "Clinic Management System",
+      description:
+        "I developed a full-stack application for a clinic that allows users to manage appointments: schedule them and change their date, while administrators can cancel and reschedule appointments as well.",
+      image: "./ClinicaImagen.png", // Reemplaza con la imagen adecuada
+      badges: ["React", ".NET", "MySQL", "TailwindCSS"],
+      github: "https://github.com/thestward192/Proycto2-Front-end", // Actualiza con la URL real de tu repositorio
+      liveDemo: "https://proycto2-front-end.vercel.app",
     },
   ],
   es: [
@@ -46,6 +56,17 @@ export const projectData = {
       badges: ["React", "Vite", "TailwindCSS"],
       github: "https://github.com/BrandonJafeth/Nuestra-Senora-Del-Rosario-Frontend",
       liveDemo: "https://nuestra-senora-del-rosario-frontend.vercel.app//",
+    },
+    {
+      id: 3,
+      number: "03",
+      title: "Sistema de Gestión Clínica",
+      description:
+        "Desarrollé una aplicación full-stack para una clínica que permite a los usuarios gestionar citas: agendarlas y cambiar su fecha, y que el administrador puede cancelar citas y agendarlas también.",
+      image: "./ClinicaImagen.png", // Reemplaza con la imagen adecuada
+      badges: ["React", ".NET", "MySQL", "TailwindCSS"],
+      github: "https://github.com/thestward192/Proycto2-Front-end", // Actualiza con la URL real de tu repositorio
+      liveDemo: "https://proycto2-front-end.vercel.app",
     },
   ],
 };

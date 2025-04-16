@@ -1,5 +1,5 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { SiReact, SiVite, SiTailwindcss } from "react-icons/si";
+import { SiReact, SiVite, SiTailwindcss, SiSharp, SiMysql } from "react-icons/si";
 import { useTheme } from "../../hooks/useTheme";
 
 interface Project {
@@ -68,6 +68,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 break;
               case "TailwindCSS":
                 IconComponent = SiTailwindcss;
+                break;
+                case ".NET":
+                  IconComponent = SiSharp;
+                  break
+                  case "MySQL":
+                    IconComponent = SiMysql;
                 break;
               default:
                 IconComponent = null;
