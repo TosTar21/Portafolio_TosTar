@@ -27,9 +27,9 @@ export const projectData = {
       number: "03",
       title: "Clinic Management System",
       description:
-        "I developed a full-stack application for a clinic that allows users to manage appointments: schedule them and change their date, while administrators can cancel and reschedule appointments as well.",
-      image: "./ClinicaImagen.png", // Reemplaza con la imagen adecuada
-      badges: ["React", ".NET", "MySQL", "TailwindCSS"],
+        "I developed a full‑stack clinic app for scheduling, rescheduling and canceling appointments.",
+      image: "/ClinicaImagen.png", // Reemplaza con la imagen adecuada
+      badges: ["React", ".NET", "TailwindCSS"],
       github: "https://github.com/thestward192/Proycto2-Front-end", // Actualiza con la URL real de tu repositorio
       liveDemo: "https://proycto2-front-end.vercel.app",
     },
@@ -62,9 +62,9 @@ export const projectData = {
       number: "03",
       title: "Sistema de Gestión Clínica",
       description:
-        "Desarrollé una aplicación full-stack para una clínica que permite a los usuarios gestionar citas: agendarlas y cambiar su fecha, y que el administrador puede cancelar citas y agendarlas también.",
-      image: "./ClinicaImagen.png", // Reemplaza con la imagen adecuada
-      badges: ["React", ".NET", "MySQL", "TailwindCSS"],
+        "Desarrollé una aplicación full‑stack de clínica para agendar, reprogramar y cancelar citas.",
+      image: "/ClinicaImagen.png", // Reemplaza con la imagen adecuada
+      badges: ["React", ".NET", "TailwindCSS"],
       github: "https://github.com/thestward192/Proycto2-Front-end", // Actualiza con la URL real de tu repositorio
       liveDemo: "https://proycto2-front-end.vercel.app",
     },
