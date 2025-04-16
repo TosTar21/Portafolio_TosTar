@@ -25,25 +25,43 @@ const Navbar = () => {
         <div className="mx-auto px-8 md:px-16 w-full h-full flex justify-between items-center">
           {/* Logo */}
           <div>
-          <img
-          alt="Logo"
-          src={isDarkMode ? "/logo-dark.png" : "/Logo.png"}
-          className="w-16 h-16 object-contain"
-        />
+            <img
+              alt="Logo"
+              src={isDarkMode ? "/logo-dark.png" : "/Logo.png"}
+              className="w-16 h-16 object-contain"
+            />
           </div>
 
           {/* Navegación en escritorio */}
           <div className="hidden md:flex gap-8 items-center">
-            {navLinks[language].map((link, index) => (
-              <a
-                key={index}
-                href={link.path}
-                className="relative group text-xl font-inter font-semibold transition-all duration-300 hover:text-primary"
-              >
-                {link.name}
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
+            {navLinks[language].map((link, index) => {
+              if (link.external) {
+                // Este enlace forzará la descarga
+                return (
+                  <a
+                    key={index}
+                    href="/Cv.pdf"
+                    download
+                    className="relative group text-xl font-inter font-semibold transition-all duration-300 hover:text-primary"
+                  >
+                    {link.name}
+                    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full" />
+                  </a>
+                );
+              } else {
+                // Enlaces internos normales
+                return (
+                  <a
+                    key={index}
+                    href={link.path}
+                    className="relative group text-xl font-inter font-semibold transition-all duration-300 hover:text-primary"
+                  >
+                    {link.name}
+                    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full" />
+                  </a>
+                );
+              }
+            })}
           </div>
 
           {/* Botones en la esquina derecha */}
@@ -58,7 +76,6 @@ const Navbar = () => {
                 }`}
               >
                 <FiGlobe />
-                {/* Podemos mostrar texto a partir de md si quieres */}
                 <span className="hidden md:inline">
                   {language === "en" ? "English" : "Español"}
                 </span>
@@ -75,7 +92,11 @@ const Navbar = () => {
                     <button
                       onClick={toggleLanguage}
                       className={`flex items-center gap-2 w-full text-left px-4 py-2 ${
-                        active ? (isDarkMode ? "bg-gray-700" : "bg-gray-200") : ""
+                        active
+                          ? isDarkMode
+                            ? "bg-gray-700"
+                            : "bg-gray-200"
+                          : ""
                       }`}
                     >
                       {language === "en" ? "Español" : "English"}

@@ -1,3 +1,4 @@
+// src/components/Navbar/MobileMenu.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { navLinks } from "../../data/navLinks";
@@ -41,16 +42,34 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
 
       {/* Lista de links de navegación */}
       <div className="flex flex-col items-center">
-        {navLinks[language].map((link, index) => (
-          <a
-            key={index}
-            href={link.path}
-            className="block mb-8 text-2xl font-inter font-semibold transition-all duration-300 hover:text-primary"
-            onClick={onClose}
-          >
-            {link.name}
-          </a>
-        ))}
+        {navLinks[language].map((link, index) => {
+          if (link.external) {
+            // Descargar PDF
+            return (
+              <a
+                key={index}
+                href="/Cv.pdf"
+                download
+                className="block mb-8 text-2xl font-inter font-semibold transition-all duration-300 hover:text-primary"
+                onClick={onClose}
+              >
+                {link.name}
+              </a>
+            );
+          } else {
+            // Navegación normal
+            return (
+              <a
+                key={index}
+                href={link.path}
+                className="block mb-8 text-2xl font-inter font-semibold transition-all duration-300 hover:text-primary"
+                onClick={onClose}
+              >
+                {link.name}
+              </a>
+            );
+          }
+        })}
       </div>
     </motion.div>
   );
