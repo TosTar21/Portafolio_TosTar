@@ -4,6 +4,7 @@ import Work from "./pages/Work";
 import { Route, BrowserRouter as Router, Routes } from "react-router";
 import "./styles/index.css";
 import About from "./pages/About";
+import CVPage from "./pages/CVPage";
 
 const App = () => {
   const { isDarkMode } = useTheme();
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Work />} />
             <Route path="/about" element={<About/>} />
+            <Route path="/resume" element={<CVPage />} />
           </Routes>
         </MainLayout>
       </Router>
