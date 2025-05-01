@@ -1,6 +1,15 @@
+// src/components/ProjectCard/ProjectCard.tsx
+import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { SiReact, SiVite, SiTailwindcss, SiSharp, SiMysql } from "react-icons/si";
+import {
+  SiReact,
+  SiVite,
+  SiTailwindcss,
+  SiSharp,
+  SiMysql,
+} from "react-icons/si";
 import { useTheme } from "../../hooks/useTheme";
+import { projectData } from "../../data/projects";
 
 interface Project {
   id: number;
@@ -17,107 +26,112 @@ interface ProjectCardProps {
   project: Project;
 }
 
+const iconsMap: Record<string, React.ComponentType<{ size?: number }>> = {
+  React: SiReact,
+  Vite: SiVite,
+  TailwindCSS: SiTailwindcss,
+  ".NET": SiSharp,
+  MySQL: SiMysql,
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { isDarkMode } = useTheme();
+  const { badgeDocs }: { badgeDocs: Record<string, string> } = projectData; // mapea nombre de tech → URL de docs
 
   return (
-    // Se define el tamaño base para móviles y se aumentan en pantallas grandes (lg)
     <div className="relative w-[265px] h-[420px] lg:w-[360px] lg:h-[480px]">
-      {/* Tarjeta principal con efecto hover */}
       <div
-        className={`relative w-full h-full border-2 rounded-lg p-6 flex flex-col shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105
+        className={`
+          relative w-full h-full border-2 rounded-lg p-6 flex flex-col shadow-lg overflow-hidden
+          transform transition-transform duration-300 hover:scale-105
           ${isDarkMode ? "bg-[#262626] border-white text-white" : "bg-white border-black text-black"}
         `}
       >
-        {/* Borde "dibujado a mano" */}
+        {/* “Borde dibujado” */}
         <div
-          className={`absolute inset-0 border-[3px] rounded-lg transform rotate-1
+          className={`
+            absolute inset-0 border-[3px] rounded-lg transform rotate-1
             ${isDarkMode ? "border-white" : "border-black"}
           `}
-        ></div>
+        />
 
-        {/* Número de proyecto + línea */}
+        {/* Número + línea */}
         <div className="relative z-10 text-sm font-bold">{project.number}</div>
         <div
-          className={`relative z-10 w-full h-[2px] my-2
+          className={`
+            relative z-10 w-full h-[2px] my-2
             ${isDarkMode ? "bg-white" : "bg-black"}
           `}
-        ></div>
+        />
 
         {/* Título */}
         <h3 className="relative z-10 text-lg font-bold">{project.title}</h3>
 
-        {/* Imagen del proyecto */}
+        {/* Imagen */}
         <div className="relative z-10 w-full h-44 overflow-hidden rounded-lg mt-2">
-          <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Descripción */}
         <p className="relative z-10 text-sm mt-2">{project.description}</p>
 
-        {/* Badges de tecnologías */}
-        <div className="relative z-10 flex gap-2 mt-2 flex-wrap">
-          {project.badges.map((tech, index) => {
-            let IconComponent;
-            switch (tech) {
-              case "React":
-                IconComponent = SiReact;
-                break;
-              case "Vite":
-                IconComponent = SiVite;
-                break;
-              case "TailwindCSS":
-                IconComponent = SiTailwindcss;
-                break;
-                case ".NET":
-                  IconComponent = SiSharp;
-                  break
-                  case "MySQL":
-                    IconComponent = SiMysql;
-                break;
-              default:
-                IconComponent = null;
-            }
+        {/* Badges enlazadas a la docs oficial */}
+        <div className="relative z-10 flex flex-wrap gap-2 mt-2">
+          {project.badges.map((tech) => {
+            const Icon = iconsMap[tech];
+            const href = badgeDocs[tech];
+
             return (
-              <span
-                key={index}
-                className={`border px-3 py-1 rounded-md text-sm font-semibold shadow-md flex items-center gap-1
-                  ${isDarkMode ? "border-white bg-[#262626] text-white" : "border-black bg-white text-black"}
+              <a
+                key={tech}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`
+                  flex items-center gap-1 border px-3 py-1 rounded-md text-sm font-semibold shadow-md
+                  transition-transform duration-200 hover:scale-105
+                  ${isDarkMode
+                    ? "border-white bg-[#262626] text-white hover:bg-neutral-700"
+                    : "border-black bg-white text-black hover:bg-gray-100"}
                 `}
               >
-                {IconComponent && <IconComponent size={16} />}
+                {Icon && <Icon size={16} />}
                 {tech}
-              </span>
+              </a>
             );
           })}
         </div>
 
-        {/* Enlaces de GitHub y Sitio web */}
+        {/* Enlaces externos */}
         <div className="relative z-10 mt-auto flex justify-center gap-4 pt-2">
-          {/* Enlace Live Demo */}
           <a
             href={project.liveDemo}
             target="_blank"
             rel="noopener noreferrer"
-            className={`relative group text-3xl transition-all duration-300 ${
-              isDarkMode ? "text-white hover:text-gray-300" : "text-black hover:text-gray-700"
-            }`}
+            className={`
+              relative group text-3xl transition-all duration-300
+              ${isDarkMode ? "text-white hover:text-gray-300" : "text-black hover:text-gray-700"}
+            `}
           >
             <FaExternalLinkAlt />
-            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full" />
           </a>
 
-          {/* Enlace GitHub */}
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className={`relative group text-3xl transition-all duration-300 ${
-              isDarkMode ? "text-white hover:text-gray-300" : "text-black hover:text-gray-700"
-            }`}
+            className={`
+              relative group text-3xl transition-all duration-300
+              ${isDarkMode ? "text-white hover:text-gray-300" : "text-black hover:text-gray-700"}
+            `}
           >
             <FaGithub />
-            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full" />
           </a>
         </div>
       </div>

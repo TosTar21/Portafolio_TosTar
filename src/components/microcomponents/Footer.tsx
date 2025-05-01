@@ -9,51 +9,50 @@ const Footer: React.FC = () => {
   const { language } = useLanguage();
   const { isDarkMode } = useTheme();
 
-  // Extraemos las propiedades que agregaste en footerData
   const { date, name, message, socialTitle, roleTitle } = footerData[language];
-  // Enlaces sociales (iguales para todos los idiomas)
-  const { socialLinks } = footerData;
+  const { socialLinks } = footerData; // mismos links para todos los idiomas
 
   return (
     <footer
       className={`
         w-full font-poppins
         ${isDarkMode ? "bg-neutral-800 text-white" : "bg-neutral-100 text-black"}
-        py-8 border-t-2 border-neutral-300 transition-all duration-500
+        border-t-2 ${isDarkMode ? "border-neutral-700" : "border-neutral-300"}
+        py-8 transition-all duration-500
       `}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Columna Izquierda: Nombre y Rol */}
-        <div className="flex flex-col space-y-2">
-          <h2 className="text-xl font-semibold">
-            {name}
-          </h2>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 
+                      grid grid-cols-1 md:grid-cols-3 items-center gap-6">
+        {/* Columna 1: Nombre y rol */}
+        <div className="flex flex-col space-y-1">
+          <h2 className="text-xl font-semibold">{name}</h2>
+          <p className="text-sm">{roleTitle}</p>
+        </div>
+
+        {/* Columna 2: Copyright */}
+        <div className="text-center">
           <p className="text-sm">
-            {roleTitle}
+            &copy; {date} {name} | {message}
           </p>
         </div>
 
-        {/* Columna Derecha: Título y Enlaces Sociales */}
+        {/* Columna 3: Social Media */}
         <div className="flex flex-col items-start md:items-end space-y-2">
-          <h2 className="text-xl font-semibold">
-            {socialTitle}
-          </h2>
-          <div className="flex space-x-7">
+          <h2 className="text-xl font-semibold">{socialTitle}</h2>
+          <div className="flex space-x-6">
             {socialLinks.map((social) => {
-              let IconComponent;
+              let Icon = FaGithub;
               switch (social.name.toLowerCase()) {
-                case "github":
-                  IconComponent = FaGithub;
-                  break;
                 case "instagram":
-                  IconComponent = FaInstagram;
+                  Icon = FaInstagram;
                   break;
                 case "linkedin":
                 case "linkedinin":
-                  IconComponent = FaLinkedinIn;
+                  Icon = FaLinkedinIn;
                   break;
+                case "github":
                 default:
-                  IconComponent = FaGithub;
+                  Icon = FaGithub;
               }
               return (
                 <a
@@ -61,24 +60,14 @@ const Footer: React.FC = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="
-                    transition-transform duration-300
-                    hover:underline hover:scale-110
-                  "
+                  className="transition-transform duration-300 hover:underline hover:scale-110"
                 >
-                  <IconComponent size={20} />
+                  <Icon size={20} />
                 </a>
               );
             })}
           </div>
         </div>
-      </div>
-
-      {/* Fila inferior para Copyright */}
-      <div className="mt-4 text-center">
-        <p className="text-sm">
-          &copy; {date} {name} | {message}
-        </p>
       </div>
     </footer>
   );
