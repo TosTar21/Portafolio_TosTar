@@ -1,5 +1,13 @@
 // src/data/projects.js
 export const projectData = {
+
+  badgeDocs: {
+    React: "https://reactjs.org/",
+    Vite: "https://vitejs.dev/",
+    TailwindCSS: "https://tailwindcss.com/",
+    ".NET": "https://dotnet.microsoft.com/",
+    MySQL: "https://www.mysql.com/",
+  },
   en: [
     {
       id: 1,
@@ -20,8 +28,8 @@ export const projectData = {
         "I developed an administrative system for Santa Cruz Nursing Home, which optimizes internal management processes.",
       image: "./SistemaAdminitsrtivoImagen.png", // Reemplaza esta URL por la imagen real o un placeholder
       badges: ["React", "Vite", "TailwindCSS"],
-      github: "https://github.com/BrandonJafeth/Nuestra-Senora-Del-Rosario-Frontend",
-      liveDemo: "https://nuestra-senora-del-rosario-frontend.vercel.app/",
+      github: "",
+      liveDemo: "",
     },{
       id: 3,
       number: "03",
@@ -54,8 +62,8 @@ export const projectData = {
         "Desarrollé un sistema administrativo para el Hogar de Ancianos de Santa Cruz, que optimiza la gestión interna y los procesos administrativos.",
       image: "./SistemaAdminitsrtivoImagen.png", // Reemplaza esta URL por la imagen real o un placeholder
       badges: ["React", "Vite", "TailwindCSS"],
-      github: "https://github.com/BrandonJafeth/Nuestra-Senora-Del-Rosario-Frontend",
-      liveDemo: "https://nuestra-senora-del-rosario-frontend.vercel.app//",
+      github: "",
+      liveDemo: "",
     },
     {
       id: 3,

@@ -18,7 +18,7 @@ const ThemeIcon = () => {
         animate={{ y: [0, -8, 0] }} 
         transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
       >
-        {isDarkMode ? <BsSunFill /> : <BsMoon />}
+        {isDarkMode ? <BsMoon /> :  <BsSunFill />}
       </motion.div>
     </motion.div>
   );
