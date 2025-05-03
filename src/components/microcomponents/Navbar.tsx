@@ -7,6 +7,7 @@ import { useTheme } from "../../hooks/useTheme";
 import { useLanguage } from "../../hooks/useLanguage";
 import { navLinks } from "../../data/navLinks";
 import MobileMenu from "./MobileMenu";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const { isDarkMode } = useTheme();
@@ -34,34 +35,17 @@ const Navbar = () => {
 
           {/* Navegación en escritorio */}
           <div className="hidden md:flex gap-8 items-center">
-            {navLinks[language].map((link, index) => {
-              if (link.external) {
-                // Este enlace forzará la descarga
-                return (
-                  <a
-                    key={index}
-                    href="/Cv.pdf"
-                    download
-                    className="relative group text-xl font-inter font-semibold transition-all duration-300 hover:text-primary"
-                  >
-                    {link.name}
-                    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full" />
-                  </a>
-                );
-              } else {
-                // Enlaces internos normales
-                return (
-                  <a
-                    key={index}
-                    href={link.path}
-                    className="relative group text-xl font-inter font-semibold transition-all duration-300 hover:text-primary"
-                  >
-                    {link.name}
-                    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-full" />
-                  </a>
-                );
-              }
-            })}
+            {navLinks[language].map((link, idx) => (
+            <Link
+              key={idx}
+              to={link.path || "#"}
+              onClick={() => setIsOpen(false)}
+              className="relative group text-xl font-semibold hover:text-primary"
+            >
+              {link.name}
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-current transition-all group-hover:w-full" />
+            </Link>
+            ))}
           </div>
 
           {/* Botones en la esquina derecha */}

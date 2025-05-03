@@ -29,7 +29,7 @@ export const footerData = {
     {
       id: 3,
       name: "LinkedIn",
-      href: "https://www.linkedin.com/in/oscar-zuniga-sanchez-424427323/",
+      href: "https://www.linkedin.com/in/oscar-zu%C3%B1iga-sanchez-ba33a0363/",
     },
   ],
 };
