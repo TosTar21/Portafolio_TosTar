@@ -1,5 +1,3 @@
-// src/pages/CVPage.tsx
-import React from "react";
 import { useLanguage } from "../hooks/useLanguage";
 import { useTheme } from "../hooks/useTheme";
 
@@ -35,41 +33,45 @@ const CVPage: React.FC = () => {
   ].join(" ");
 
   return (
-    <section className="min-h-screen pt-24 pb-16 flex flex-col items-center gap-6">
-      {/* Visor PDF con fallback */}
-      <object
-        data="/Oscar Zuñiga_Cv.pdf#view=FitH"
-        type="application/pdf"
-        className="w-full h-[calc(100vh-8rem)]"
-      >
-        <embed src="/Oscar Zuñiga_Cv.pdf" type="application/pdf" />
-        <p className="text-center mt-4">
-          {t.fallback}
-          <a
-            href="/Oscar Zuñiga_Cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            {t.open}
-          </a>
-          .
-        </p>
-      </object>
+    <div className="min-h-screen w-full transition-all duration-500 px-6 md:px-12">
+      {/* <Navbar />  Ya está en App.tsx */}
+      <section className="pt-24 pb-16 flex flex-col items-center gap-6">
+        {/* Visor PDF con fallback */}
+        <object
+          data="/Oscar Zuñiga_Cv.pdf#view=FitH"
+          type="application/pdf"
+          className="w-full h-[calc(100vh-8rem)]"
+        >
+          <embed src="/Oscar Zuñiga_Cv.pdf" type="application/pdf" />
+          <p className="text-center mt-4">
+            {t.fallback}
+            <a
+              href="/Oscar Zuñiga_Cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              {t.open}
+            </a>
+            .
+          </p>
+        </object>
 
-      {/* Botón de descarga */}
-      <button
-        onClick={() => {
-          const link = document.createElement("a");
-          link.href = "/Oscar Zuñiga_Cv.pdf";
-          link.download = "Oscar Zuñiga_Cv.pdf";
-          link.click();
-        }}
-        className={btnClasses}
-      >
-        {t.download}
-      </button>
-    </section>
+        {/* Botón de descarga */}
+        <button
+          onClick={() => {
+            const link = document.createElement("a");
+            link.href = "/Oscar Zuñiga_Cv.pdf";
+            link.download = "Oscar Zuñiga_Cv.pdf";
+            link.click();
+          }}
+          className={btnClasses}
+        >
+          {t.download}
+        </button>
+      </section>
+      {/* <Footer />  Ya está en App.tsx */}
+    </div>
   );
 };
 

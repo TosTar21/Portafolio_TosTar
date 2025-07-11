@@ -43,7 +43,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
       {/* Lista de links de navegación */}
       <div className="flex flex-col items-center">
         {navLinks[language].map((link, index) => {
-          if (link.external) {
+          if (link.path === "/resume") {
             // Descargar PDF
             return (
               <a
