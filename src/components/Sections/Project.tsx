@@ -22,7 +22,7 @@ const Project = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
       >
-        {language === "en" ? "Projects" : "Proyectos"}
+        {language === "en" ? "My Projects" : "Mis Proyectos"}
       </motion.h1>
       <ProjectsList />
     </motion.section>
