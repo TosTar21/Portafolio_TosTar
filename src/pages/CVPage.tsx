@@ -19,34 +19,20 @@ const CVPage: React.FC = () => {
     },
   }[language];
 
-  // Clases dinámicas según tema
-  const borderColor = isDarkMode ? "border-white" : "border-black";
-  const textOnHover = isDarkMode ? "text-white" : "text-black";
-  const bgOnHover   = "hover:bg-transparent cursor-pointer";
-
-  const btnClasses = [
-    "px-5 py-2 rounded-md border-2 font-semibold shadow",
-    "transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50",
-    borderColor,
-    bgOnHover,
-    textOnHover,
-  ].join(" ");
-
   return (
     <div className="min-h-screen w-full transition-all duration-500 px-6 md:px-12">
-      {/* <Navbar />  Ya está en App.tsx */}
       <section className="pt-24 pb-16 flex flex-col items-center gap-6">
         {/* Visor PDF con fallback */}
         <object
-          data="/Oscar Zuñiga_Cv.pdf#view=FitH"
+          data="/Resume_Oscar.pdf#view=FitH"
           type="application/pdf"
           className="w-full h-[calc(100vh-8rem)]"
         >
-          <embed src="/Oscar Zuñiga_Cv.pdf" type="application/pdf" />
+          <embed src="/Resume_Oscar.pdf" type="application/pdf" />
           <p className="text-center mt-4">
             {t.fallback}
             <a
-              href="/Oscar Zuñiga_Cv.pdf"
+            href="/Resume_Oscar.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
@@ -61,16 +47,17 @@ const CVPage: React.FC = () => {
         <button
           onClick={() => {
             const link = document.createElement("a");
-            link.href = "/Oscar Zuñiga_Cv.pdf";
-            link.download = "Oscar Zuñiga_Cv.pdf";
+            link.href = "/Resume_Oscar.pdf";
+            link.download = "Resume_Oscar.pdf";
             link.click();
           }}
-          className={btnClasses}
+          className={`inline-flex items-center gap-2 border px-5 py-2 rounded-lg text-base hover:cursor-pointer font-semibold shadow-md transition-transform duration-200 hover:scale-105 ${
+            isDarkMode ? "border-white bg-[#262626] text-white hover:bg-neutral-700" : "border-black bg-white text-black hover:bg-gray-100"
+          }`}
         >
           {t.download}
         </button>
       </section>
-      {/* <Footer />  Ya está en App.tsx */}
     </div>
   );
 };
