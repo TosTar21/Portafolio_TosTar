@@ -1,5 +1,4 @@
 import React from "react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import {
   SiCss3,
   SiFigma,
