@@ -18,7 +18,7 @@ export const projectData = {
       image: "https://i.ibb.co/N2FV8Gv2/image.png",
       badges: ["React", "Vite", "TailwindCSS"],
       github: "https://github.com/BrandonJafeth/Nuestra-Senora-del-Rosario-Informativo",
-      liveDemo: "https://nuestra-senora-del-rosario-informativo.vercel.app/",
+      liveDemo: "https://nuestrasenorainformativo.com/",
     },
     {
       id: 2,
@@ -52,7 +52,7 @@ export const projectData = {
       image: "https://i.ibb.co/N2FV8Gv2/image.png",
       badges: ["React", "Vite", "TailwindCSS"],
       github: "https://github.com/BrandonJafeth/Nuestra-Senora-del-Rosario-Informativo",
-      liveDemo: "https://nuestra-senora-del-rosario-informativo.vercel.app/",
+      liveDemo: "https://nuestrasenorainformativo.com/",
     },
     {
       id: 2,
