@@ -6,6 +6,7 @@ import {
   SiTailwindcss,
   SiSharp,
   SiMysql,
+  SiAstro,
 } from "react-icons/si";
 import { useTheme } from "../../hooks/useTheme";
 import { projectData } from "../../data/projects";
@@ -31,6 +32,7 @@ const iconsMap: Record<string, React.ComponentType<{ size?: number }>> = {
   TailwindCSS: SiTailwindcss,
   ".NET": SiSharp,
   MySQL: SiMysql,
+  Astro: SiAstro,
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {

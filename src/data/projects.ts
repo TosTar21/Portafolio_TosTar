@@ -14,7 +14,7 @@ export const projectData = {
       number: "01",
       title: "Nursing Home Website",
       description:
-        "I developed an informational website for Santa Cruz Nursing Home, collaborating with engineering classmates on the frontend.",
+        "I developed an informational website for Santa Cruz Nursing Home, where families and visitors can learn about the institution, its services and admission process. The site includes sections to submit online requests for resident admission, volunteer opportunities and donations, making it easier to connect the community with the home.",
       image: "https://i.ibb.co/N2FV8Gv2/image.png",
       badges: ["React", "Vite", "TailwindCSS"],
       github: "https://github.com/BrandonJafeth/Nuestra-Senora-del-Rosario-Informativo",
@@ -25,7 +25,7 @@ export const projectData = {
       number: "02",
       title: "Nursing Home Admin System",
       description:
-        "I developed an administrative system for Santa Cruz Nursing Home, which optimizes internal management processes.",
+        "I built an internal management system for Santa Cruz Nursing Home that centralizes key operational processes. Staff can review and manage admission, volunteer and donation requests, access detailed resident profiles, track medical information, view upcoming appointments, and monitor inventories for food, cleaning supplies and office materials.",
       image: "./SistemaAdminitsrtivoImagen.png", // Reemplaza esta URL por la imagen real o un placeholder
       badges: ["React", "Vite", "TailwindCSS"],
       github: "",
@@ -33,13 +33,13 @@ export const projectData = {
     },{
       id: 3,
       number: "03",
-      title: "Clinic Management System",
+      title: "Photographer Website – Gadea ISO",
       description:
-        "I developed a full‑stack clinic app for scheduling, rescheduling and canceling appointments.",
-      image: "/ClinicaImagen.png", // Reemplaza con la imagen adecuada
-      badges: ["React", ".NET", "TailwindCSS"],
-      github: "https://github.com/thestward192/Proycto2-Front-end", // Actualiza con la URL real de tu repositorio
-      liveDemo: "https://proycto2-front-end.vercel.app",
+        "I designed and developed a website for a professional photographer to promote wedding, birthday, corporate and commercial photography services. The site includes a hero section, services grid, portfolio highlights, client testimonials, and a contact form connected to WhatsApp for quick inquiries.",
+      image: "https://i.ibb.co/sJstszVJ/image.png",
+      badges: ["Astro", "TailwindCSS"],
+      github: "", // puedes poner aquí el repo cuando lo tengas público
+      liveDemo: "https://landing-photography-puce.vercel.app/",
     },
   ],
   es: [
@@ -48,7 +48,7 @@ export const projectData = {
       number: "01",
       title: "Sitio Web Hogar de Ancianos",
       description:
-        "Desarrollé un sitio web informativo para el Hogar de Ancianos de Santa Cruz, colaborando con compañeros de ingeniería en el frontend.",
+        "Desarrollé un sitio web informativo para el Hogar de Ancianos de Santa Cruz, donde familiares y visitantes pueden conocer la institución, sus servicios y el proceso de ingreso. El sitio incluye formularios en línea para solicitudes de admisión de residentes, voluntariado y donaciones, facilitando la conexión de la comunidad con el hogar.",
       image: "https://i.ibb.co/N2FV8Gv2/image.png",
       badges: ["React", "Vite", "TailwindCSS"],
       github: "https://github.com/BrandonJafeth/Nuestra-Senora-del-Rosario-Informativo",
@@ -59,22 +59,22 @@ export const projectData = {
       number: "02",
       title: "Sistema Administrativo del Hogar de Ancianos",
       description:
-        "Desarrollé un sistema administrativo para el Hogar de Ancianos de Santa Cruz, que optimiza la gestión interna y los procesos administrativos.",
+        "Desarrollé un sistema administrativo interno para el Hogar de Ancianos de Santa Cruz que centraliza los procesos de gestión. El personal puede revisar y administrar solicitudes de ingreso, voluntariado y donaciones, consultar perfiles detallados de los residentes, visualizar información médica, ver las citas programadas y controlar los inventarios de comida, limpieza y materiales de oficina.",
       image: "./SistemaAdminitsrtivoImagen.png", // Reemplaza esta URL por la imagen real o un placeholder
       badges: ["React", "Vite", "TailwindCSS"],
       github: "",
       liveDemo: "",
-    },
-    {
+    },{
       id: 3,
       number: "03",
-      title: "Sistema de Gestión Clínica",
+      title: "Página web Fotógrafo – Gadea ISO",
       description:
-        "Desarrollé una aplicación full‑stack de clínica para agendar, reprogramar y cancelar citas.",
-      image: "/ClinicaImagen.png", // Reemplaza con la imagen adecuada
-      badges: ["React", ".NET", "TailwindCSS"],
-      github: "https://github.com/thestward192/Proycto2-Front-end", // Actualiza con la URL real de tu repositorio
-      liveDemo: "https://proycto2-front-end.vercel.app",
+        "Diseñé y desarrollé una página web para un fotógrafo profesional, orientada a promocionar servicios de bodas, cumpleaños, eventos corporativos y fotografía comercial. Incluye sección hero, servicios, portafolio destacado, testimonios de clientes y formulario de contacto integrado con WhatsApp para cotizaciones rápidas.",
+      image:
+        "https://i.ibb.co/sJstszVJ/image.png",
+      badges: ["Astro", "TailwindCSS"],
+      github: "", // agrega el enlace cuando lo publiques
+      liveDemo: "https://landing-photography-puce.vercel.app/",
     },
   ],
 };
