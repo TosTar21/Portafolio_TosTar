@@ -2,9 +2,12 @@ import React from "react";
 import {
   SiCss3,
   SiFigma,
+  SiFirebase,
+  SiGit,
   SiHtml5,
   SiJavascript,
   SiReact,
+  SiSupabase,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
@@ -26,6 +29,10 @@ const AboutMe = () => {
     TypeScript: { icon: SiTypescript, link: "https://www.typescriptlang.org" },
     TailwindCSS: { icon: SiTailwindcss, link: "https://tailwindcss.com" },
     "React Query": { icon: SiReact, link: "https://tanstack.com/query/v4" },
+    Firebase: { icon: SiFirebase, link: "https://firebase.google.com" },
+    Supabase: { icon: SiSupabase, link: "https://supabase.com" },
+    Git: { icon: SiGit, link: "https://git-scm.com" },
+    GitHub: { icon: SiGit, link: "https://github.com" },
     "React Hook Form": { icon: SiReact, link: "https://react-hook-form.com" },
     Figma: { icon: SiFigma, link: "https://www.figma.com" },
   };
