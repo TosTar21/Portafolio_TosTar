@@ -7,6 +7,8 @@ export const projectData = {
     TailwindCSS: "https://tailwindcss.com/",
     ".NET": "https://dotnet.microsoft.com/",
     MySQL: "https://www.mysql.com/",
+    Shopify: "https://www.shopify.com/",
+    Astro: "https://astro.build/",
   },
   en: [
     {
@@ -39,7 +41,17 @@ export const projectData = {
       image: "https://i.ibb.co/sJstszVJ/image.png",
       badges: ["Astro", "TailwindCSS"],
       github: "", // puedes poner aquí el repo cuando lo tengas público
-      liveDemo: "https://landing-photography-puce.vercel.app/",
+      liveDemo: "https://www.gadeafotografia.com/",
+    },{
+      id: 4,
+      number: "04",
+      title: "LoomiBuy – Home Organization Store",
+      description:
+        "I designed and developed the LoomiBuy online store, an e-commerce site specializing in home organization products. I implemented the visual identity, catalog structure, customized product variants and a responsive experience focused on mobile devices.",
+      image: "https://i.ibb.co/9mvC52Vr/image.png",
+      badges: ["Shopify"],
+      github: "", // puedes poner aquí el repo cuando lo tengas público
+      liveDemo: "https://loomibuy.shop/",
     },
   ],
   es: [
@@ -74,7 +86,17 @@ export const projectData = {
         "https://i.ibb.co/sJstszVJ/image.png",
       badges: ["Astro", "TailwindCSS"],
       github: "", // agrega el enlace cuando lo publiques
-      liveDemo: "https://landing-photography-puce.vercel.app/",
+      liveDemo: "https://www.gadeafotografia.com/",
+    },{
+      id: 4,
+      number: "04",
+      title: "LoomiBuy – Tienda de Organizadores para el Hogar",
+      description:
+        "Diseñé y desarrollé la tienda en línea LoomiBuy, un e-commerce especializado en productos de organización para el hogar. Implementé la identidad visual, la estructura del catálogo, variantes de productos personalizadas y una experiencia responsiva enfocada en dispositivos móviles.",
+      image: "https://i.ibb.co/9mvC52Vr/image.png",
+      badges: ["Shopify"],
+      github: "", // puedes poner aquí el repo cuando lo tengas público
+      liveDemo: "https://loomibuy.shop/",
     },
   ],
 };
