@@ -24,15 +24,15 @@ const CVPage: React.FC = () => {
       <section className="pt-24 pb-16 flex flex-col items-center gap-6">
         {/* Visor PDF con fallback */}
         <object
-          data="/Resume_Oscar.pdf#view=FitH"
+          data="/Resume_Oscar_Bi.pdf#view=FitH"
           type="application/pdf"
           className="w-full h-[calc(100vh-8rem)]"
         >
-          <embed src="/Resume_Oscar.pdf" type="application/pdf" />
+          <embed src="/Resume_Oscar_Bi.pdf" type="application/pdf" />
           <p className="text-center mt-4">
             {t.fallback}
             <a
-            href="/Resume_Oscar.pdf"
+            href="/Resume_Oscar_Bi.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
@@ -47,8 +47,8 @@ const CVPage: React.FC = () => {
         <button
           onClick={() => {
             const link = document.createElement("a");
-            link.href = "/Resume_Oscar.pdf";
-            link.download = "Resume_Oscar.pdf";
+            link.href = "/Resume_Oscar_Bi.pdf";
+            link.download = "Resume_Oscar_Bi.pdf";
             link.click();
           }}
           className={`inline-flex items-center gap-2 border px-5 py-2 rounded-lg text-base hover:cursor-pointer font-semibold shadow-md transition-transform duration-200 hover:scale-105 ${
