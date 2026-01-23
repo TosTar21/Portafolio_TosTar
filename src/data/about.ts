@@ -14,23 +14,14 @@ export const aboutData = {
           company: "Hogar de Ancianos de Santa Cruz, Guanacaste",
           position: "Engineering Project",
           year: "2024 - 2025",
-          description: "I contributed to the development of a comprehensive digital solution for the Santa Cruz Nursing Home, including an informational website and a custom administrative system. The project involved both frontend and backend development, with a focus on improving internal management processes, streamlining information handling, and providing user-friendly digital tools for administrative staff.",
-          achievements: [
-            "Design and implementation of resident management system",
-            "Development of responsive and accessible interface",
-            "Integration of real-time notification system"
-          ],
+          description: "I participated in the development of an informational website and an administrative system for the Santa Cruz Nursing Home, working on both frontend and backend to improve internal management.",
           technologies: ["React", "Vite", "TypeScript", "Tailwind CSS", "C#", "MySQL" ]
         },
         {
           company: "DMR Rentals",
           position: "Professional Practice",
           year: "2025",
-          description: "I completed my professional internship at DMR Rentals, where I contributed to the development and enhancement of business-oriented technological solutions. I worked on the creation and maintenance of websites and internal systems, supporting administrative and operational processes through digital tools, with a strong focus on usability, efficiency, and scalability.",
-          achievements: [
-            "Development of corporate website with accommodations catalog",
-            "Implementation of reservation system"
-          ],
+          description: "I completed my professional internship at DMR Rentals, contributing to the development of websites and internal systems that support administrative and operational processes, with a focus on usability and efficiency.",
           technologies: ["Vite", "React", "TypeScript", "Tailwind CSS", "Firebase"]
         }
       ],
@@ -67,23 +58,14 @@ export const aboutData = {
           company: "Hogar de Ancianos de Santa Cruz, Guanacaste",
           position: "Proyecto de Ingeniería",
           year: "2024 - 2025",
-          description: "Participé en el desarrollo de una solución digital integral para el Hogar de Ancianos de Santa Cruz, que incluyó un sitio web informativo y un sistema administrativo personalizado. El proyecto abarcó tanto el desarrollo frontend como backend, enfocado en optimizar la gestión interna, mejorar la organización de la información y facilitar el acceso a herramientas digitales para el personal administrativo.",
-          achievements: [
-            "Diseño e implementación de sistema de gestión de residentes",
-            "Desarrollo de interfaz responsive y accesible",
-            "Integración de sistema de notificaciones en tiempo real"
-          ],
+          description: "Participé en el desarrollo de un sitio web informativo y un sistema administrativo para el Hogar de Ancianos de Santa Cruz, trabajando en frontend y backend para mejorar la gestión interna.",
           technologies: ["React", "Vite", "TypeScript", "Tailwind CSS", "C#", "MySQL" ]
         },
         {
           company: "DMR Rentals",
           position: "Práctica Profesional",
           year: "2025",
-          description: "Realicé mi práctica profesional en DMR Rentals, participando en el desarrollo y mejora de soluciones tecnológicas orientadas al negocio. Colaboré en la creación y mantenimiento de páginas web y sistemas internos, apoyando procesos administrativos y operativos mediante herramientas digitales, con un enfoque en usabilidad, eficiencia y escalabilidad.",
-          achievements: [
-            "Desarrollo de sitio web corporativo con catálogo de alojamientos",
-            "Implementación de sistema de reservas ",
-          ],
+          description: "Realicé mi práctica profesional en DMR Rentals, colaborando en el desarrollo de páginas web y sistemas internos que apoyan procesos administrativos y operativos, con enfoque en usabilidad y eficiencia.",
         technologies: ["Vite", "React", "TypeScript", "Tailwind CSS", "Firebase"]
         }
       ],

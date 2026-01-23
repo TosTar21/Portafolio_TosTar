@@ -192,18 +192,6 @@ const AboutMe = () => {
               {job.description}
             </p>
 
-            {/* Achievements */}
-            <div className="mt-4">
-              <p className="font-semibold mb-3">{about.achievementsLabel}</p>
-              <ul className="list-disc list-inside space-y-2 ml-2">
-                {job.achievements.map((achievement, i) => (
-                  <li key={i} className={`text-sm ${isDarkMode ? "text-neutral-300" : "text-neutral-700"}`}>
-                    {achievement}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             {/* Technologies */}
             <div className="mt-4">
               <p className="font-semibold mb-3">{about.technologiesLabel}</p>
