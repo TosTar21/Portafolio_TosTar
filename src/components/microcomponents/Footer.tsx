@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
   const { language } = useLanguage();
   const { isDarkMode } = useTheme();
 
-  const { date, name, message, socialTitle, roleTitle } = footerData[language];
+  const { date, name, message, socialTitle, roleTitle, email} = footerData[language];
   const { socialLinks } = footerData; // mismos links para todos los idiomas
 
   return (
@@ -27,6 +27,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col space-y-1">
           <h2 className="text-xl font-semibold">{name}</h2>
           <p className="text-sm">{roleTitle}</p>
+          <a className="text-blue-800 font-semibold" href={`mailto:${email}`}>{email}</a>
         </div>
 
         {/* Columna 2: Copyright */}
