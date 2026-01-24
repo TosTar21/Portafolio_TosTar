@@ -6,6 +6,7 @@ export const footerData = {
     message: "All rights reserved",
     socialTitle: "Social Media",
     roleTitle: "Frontend Developer",
+    email: "oscarzswork@gmail.com",
   },
   es: {
     date: 2025,
@@ -13,6 +14,7 @@ export const footerData = {
     message: "Todos los derechos reservados",
     socialTitle: "Redes Sociales",
     roleTitle: "Desarrollador Frontend",
+    email: "oscarzswork@gmail.com",
   },
   // Enlaces sociales (iguales para todos los idiomas)
   socialLinks: [

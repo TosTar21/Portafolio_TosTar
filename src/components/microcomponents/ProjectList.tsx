@@ -8,15 +8,14 @@ const ProjectsList = () => {
   const projects = projectData[language] || [];
 
   return (
-    <div className="flex flex-col items-center gap-20 w-full py-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-10 w-full max-w-[1400px] mx-auto px-4 md:px-8 py-8">
       {projects.map((project, idx) => (
         <motion.div
           key={project.id}
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, delay: idx * 0.15, ease: "easeOut" }}
-          className="w-full flex justify-center"
+          transition={{ duration: 0.7, delay: idx * 0.1, ease: "easeOut" }}
         >
           <ProjectCard project={project} />
         </motion.div>
