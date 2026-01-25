@@ -8,6 +8,7 @@ import {
   SiMysql,
   SiAstro,
   SiShopify,
+  SiTypescript,
 } from "react-icons/si";
 import { useTheme } from "../../hooks/useTheme";
 import { projectData } from "../../data/projects";
@@ -35,6 +36,7 @@ const iconsMap: Record<string, React.ComponentType<{ size?: number }>> = {
   MySQL: SiMysql,
   Astro: SiAstro,
   Shopify: SiShopify, 
+  Typescript: SiTypescript, 
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
