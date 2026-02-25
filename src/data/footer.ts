@@ -21,7 +21,7 @@ export const footerData = {
     {
       id: 1,
       name: "GitHub",
-      href: "https://github.com/TosTar21",
+      href: "https://github.com/Oscar26-zs",
     },
     {
       id: 2,
