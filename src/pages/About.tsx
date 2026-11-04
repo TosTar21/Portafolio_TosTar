@@ -1,15 +1,16 @@
-import AboutMe from '../components/Sections/AboutMe'
+import { AboutIntro } from "@/components/about/AboutIntro";
+import { SkillsConstellation } from "@/components/skills/SkillsConstellation";
+import { ExperienceTimeline } from "@/components/experience/ExperienceTimeline";
+import { EducationList } from "@/components/experience/EducationList";
 
-const About = () => {
+/** Identity → Skills (OSCAR constellation) + Languages → Experience → Education */
+export default function About() {
   return (
-    <div className="min-h-screen w-full transition-all duration-500 px-6 md:px-12">
-      {/* <Navbar />  Ya está en App.tsx */}
-      <div className="py-46 md:py-32">
-        <AboutMe />
-      </div>
-      {/* <Footer />  Ya está en App.tsx */}
+    <div className="mx-auto max-w-5xl px-6">
+      <AboutIntro />
+      <SkillsConstellation />
+      <ExperienceTimeline />
+      <EducationList />
     </div>
   );
 }
-
-export default About

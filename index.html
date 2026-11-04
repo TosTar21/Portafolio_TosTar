@@ -1,17 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1EQH78HYCJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1EQH78HYCJ');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EQH78HYCJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1EQH78HYCJ');
+    </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Logo.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- anti-flash: apply the saved / system theme before React loads -->
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.classList.toggle("dark", t === "dark");
+        var l = localStorage.getItem("language");
+        if (l === "es" || l === "en") document.documentElement.lang = l;
+      } catch (e) {}
+    </script>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TosTar's Portfolio</title>
     <meta name="google-site-verification" content="exC-mZjrqRZKKZwq5gtHTTaYnRjoUIPibaF1vi7XpbU" />

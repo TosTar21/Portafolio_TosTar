@@ -1,34 +1,52 @@
-import { useTheme } from "./hooks/useTheme";
-import Work from "./pages/Work";
-import { Route, BrowserRouter as Router, Routes } from "react-router";
-import "./styles/index.css";
-import About from "./pages/About";
-import CVPage from "./pages/CVPage";
-import Navbar from "./components/microcomponents/Navbar";
-import Footer from "./components/microcomponents/Footer";
-import ThemeIcon from "./components/microcomponents/ThemeIcon";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router";
+import { AnimatePresence, MotionConfig } from "framer-motion";
+import { ThemeProvider } from "@/context/ThemeContext";
+import { LanguageProvider } from "@/context/LanguageContext";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
+import { CursorFollower } from "@/components/motion/CursorFollower";
+import { PageTransition } from "@/components/motion/PageTransition";
+import { SiteStarField } from "@/components/motion/StarField";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Resume from "@/pages/Resume";
 
-const App = () => {
-  const { isDarkMode } = useTheme();
-
+function AnimatedRoutes() {
+  const location = useLocation();
+  // Group "/" and unknown paths under the same key so they don't re-animate between each other
+  const key = location.pathname === "/about" || location.pathname === "/resume" ? location.pathname : "/";
   return (
-    <div className={`${isDarkMode ? "bg-neutral-800 text-white" : "bg-neutral-100 text-black"} min-h-screen transition-all duration-500`}>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <ThemeIcon />
-              <Work />
-            </>
-          } />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<CVPage />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <AnimatePresence mode="wait" initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+      <Routes location={location} key={key}>
+        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+        <Route path="/resume" element={<PageTransition><Resume /></PageTransition>} />
+        <Route path="*" element={<PageTransition><Home /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
   );
-};
+}
 
-export default App;
+export default function App() {
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <MotionConfig reducedMotion="user">
+          <BrowserRouter>
+            <div className="relative isolate min-h-screen bg-neutral-100 text-black dark:bg-neutral-800 dark:text-white">
+              {/* night sky behind every page (negative z inside the isolated root, above its background) */}
+              <SiteStarField />
+              <ScrollProgress />
+              <CursorFollower />
+              <Navbar />
+              <main>
+                <AnimatedRoutes />
+              </main>
+              <Footer />
+            </div>
+          </BrowserRouter>
+        </MotionConfig>
+      </LanguageProvider>
+    </ThemeProvider>
+  );
+}
